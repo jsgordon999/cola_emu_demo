@@ -88,7 +88,7 @@ with st.expander(r'**Scientific Context and Significance**', expanded=False):
         distribution and structure of matter across different length scales, at different times, throughout the Universe. 
         Technically, the power spectrum is a function of the Fourier wavenumber $k$, and the redshift $z$. Effectively, 
         $k$ sets the spatial scales in the Universe (from largest to smallest), and $z$ sets the particular time in the 
-        Universe\'s history (also measured from largest to smallest, so that $z=0$ corresponds to today). The matter power 
+        Universe\'s history (also measured in reverse, so that $z=0$ corresponds to today). The matter power 
         spectrum also depends on the parameters of one\'s cosmological model. For example, $H_0$ which encodes the Universe's 
         expansion rate, or $\Omega_m$ which specifies what fraction of the Universe's total energy density is in the form of 
         matter. The matter power spectrum is a fundamental quantity in Cosmology, and is an essential link for comparing 
