@@ -82,6 +82,15 @@ N_val = val_errs.shape[0]
 
 st.title('Matter Power Spectrum Emulator Demo')
 
+st.graphviz_chart("""
+digraph {
+  rankdir=LR
+  A -> B
+  B -> C
+  C -> A
+}
+""", use_container_width=True)
+
 # ---------- Science background ------------------
 with st.expander(r'**Scientific Context and Significance**', expanded=False):
     st.write(r'''The matter power spectrum $P(k,z)$ is a quantity that encodes the statistical 
