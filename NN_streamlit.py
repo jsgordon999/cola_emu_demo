@@ -246,24 +246,24 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     st.markdown(r'**$\Omega_m$**')
-    Om = st.slider('', 0.24, 0.40, 0.32, 0.001, key='Om')
+    Om = st.slider('Omega_m', 0.24, 0.40, 0.32, 0.001, key='Om', label_visibility="collapsed")
 
     st.markdown(r'**$\Omega_b$**')
-    Ob = st.slider('', 0.04, 0.06, 0.05, 0.001, key='Ob')
+    Ob = st.slider('Omega_b', 0.04, 0.06, 0.05, 0.001, key='Ob', label_visibility="collapsed")
 
 with col2:
     st.markdown(r'**$n_s$**')
-    ns = st.slider('', 0.92, 1.00, 0.96, 0.001, key='ns')
+    ns = st.slider('n_s', 0.92, 1.00, 0.96, 0.001, key='ns', label_visibility="collapsed")
 
     st.markdown(r'**$A_s \times 10^9$**')
-    As_scaled = st.slider('', 1.7, 2.5, 2.1, 0.01, key='As_scaled')
+    As_scaled = st.slider('A_s', 1.7, 2.5, 2.1, 0.01, key='As_scaled', label_visibility="collapsed")
 
 with col3:
     st.markdown(r'**$h$**')
-    h = st.slider('', 0.61, 0.73, 0.67, 0.001, key='h')
+    h = st.slider('h', 0.61, 0.73, 0.67, 0.001, key='h', label_visibility="collapsed")
 
     st.markdown(r'**$w$**')
-    w = st.slider('', -1.30, -0.70, -1.00, 0.001, key='w')
+    w = st.slider('w', -1.30, -0.70, -1.00, 0.001, key='w', label_visibility="collapsed")
 
 # ---------- Normalize inputs ----------
 # Order: [Om, Ob, ns, As_scaled, h, w]
