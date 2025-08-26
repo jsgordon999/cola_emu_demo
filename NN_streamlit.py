@@ -82,15 +82,6 @@ N_val = val_errs.shape[0]
 
 st.title('Matter Power Spectrum Emulator Demo')
 
-st.graphviz_chart("""
-digraph {
-  rankdir=LR
-  A -> B
-  B -> C
-  C -> A
-}
-""", use_container_width=True)
-
 # ---------- Science background ------------------
 with st.expander(r'**Scientific Context and Significance**', expanded=False):
     st.write(r'''The matter power spectrum $P(k,z)$ is a quantity that encodes the statistical 
@@ -193,22 +184,21 @@ with st.expander(r'**Neural Network Architecture**', expanded=False):
         the tilde in $\tilde{y}^{m}_n$ denotes that weights and biases have been apllied. This activation effectively serves as a combination of 
         a linear pass-through and a sigmoid gate, allowing for adaptive nonlinearity. The architecture is summarized below:''')
 
-    dot = r'''digraph G {
-          rankdir=LR; nodesep=0.5; ranksep=0.4;
-          node [fontname='Helvetica', color='#444', fixedsize=true];
+    dot = """digraph G {
+      rankdir=LR; nodesep=0.5; ranksep=0.4;
+      node [fontname="Helvetica", color="#444", fixedsize=true];
 
-          input  [shape=box, style=filled, width=0.55, height=0.5, fillcolor='#f6f8fa', label='Input\n(6)'];
-          h1     [shape=box, style=filled, width=0.55, height=1.6, fillcolor='#cce5ff', label='Hidden 1\n(512)'];
-          h2     [shape=box, style=filled, width=0.55, height=1.6, fillcolor='#cce5ff', label='Hidden 2\n(512)'];
-          h3     [shape=box, style=filled, width=0.55, height=1.6, fillcolor='#cce5ff', label='Hidden 3\n(512)'];
-          output [shape=box, style=filled, width=0.7, height=1.0, fillcolor='#d5f5e3', label='Output\nPC\namplitudes\n(50)'];
+      input  [shape=box, style=filled, width=0.55, height=0.5, fillcolor="#f6f8fa", label="Input\\n(6)"];
+      h1     [shape=box, style=filled, width=0.55, height=1.6, fillcolor="#cce5ff", label="Hidden 1\\n(512)"];
+      h2     [shape=box, style=filled, width=0.55, height=1.6, fillcolor="#cce5ff", label="Hidden 2\\n(512)"];
+      h3     [shape=box, style=filled, width=0.55, height=1.6, fillcolor="#cce5ff", label="Hidden 3\\n(512)"];
+      output [shape=box, style=filled, width=0.7, height=1.0, fillcolor="#d5f5e3", label="Output\\nPC\\namplitudes\\n(50)"];
 
-          act1 [shape=ellipse, width=0.25, height=0.25, label='act.'];
-          act2 [shape=ellipse, width=0.25, height=0.25, label='act.'];
-          act3 [shape=ellipse, width=0.25, height=0.25, label='act.'];
+      act1 [shape=ellipse, width=0.25, height=0.25, label="act."];
+      act2 [shape=ellipse, width=0.25, height=0.25, label="act."];
+      act3 [shape=ellipse, width=0.25, height=0.25, label="act."];
 
-          input -> h1 -> act1 -> h2 -> act2 -> h3 -> act3 -> output;
-        }'''
+      input -> h1 -> act1 -> h2 -> act2 -> h3 -> act3 -> output;}"""
 
     st.graphviz_chart(dot, use_container_width=True)
 
