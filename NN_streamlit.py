@@ -283,7 +283,7 @@ st.info(f'NN inference time: **{elapsed_ms:.1f} ms** on CPU')
 start = time.perf_counter()
 pk_l = get_linear_pk(h, Om, Om-Ob, As_scaled*1e-9, ns, w,tau = 0.078)
 elapsed_ms = (time.perf_counter() - start) * 1e3
-st.info(f'Linear calculation time: **{elapsed_ms:.1f} ms** on CPU')
+st.info(f'Linear approximation calculation time: **{elapsed_ms:.1f} ms** on CPU')
 
 
 # ---------- Interactive plot ----------
