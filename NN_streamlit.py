@@ -39,7 +39,7 @@ def load_emulator(model_path: str = 'NN_baseline.keras', data=None):
     emu.load(model_path)
     return emu
 
-@st.cache_data
+@st.cache_data(show_spinner="Computing linear approximation numerically...")
 def get_linear_pk(h, Omega_b, Omega_c, As, ns, w,tau = 0.078):
     cosmology = camb.set_params(# Background
                     H0 = 100*h, ombh2=Omega_b*h**2, omch2=Omega_c*h**2,
